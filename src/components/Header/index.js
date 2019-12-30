@@ -77,9 +77,9 @@ class Header extends React.Component {
     );
   }
 }
-const mapStateToProps = state => {
-  return {
-    menuName: state.menuName
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     menuName: state.menuName
+//   };
+// };
 export default Header;

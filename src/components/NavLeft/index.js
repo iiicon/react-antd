@@ -1,8 +1,9 @@
 import React from "react";
 import "./index.less";
-import '../../App.css'
+import "../../App.css";
 import { Menu, Icon } from "antd";
 import menuList from "../../config/menuConfig";
+import { NavLink, Link } from "react-router-dom";
 
 const { SubMenu } = Menu;
 
@@ -47,8 +48,10 @@ class NavLeft extends React.Component {
             key={item.key}
             title={
               <span>
-                <Icon type="appstore" />
-                <span>{item.title}</span>
+                <Link to={item.key}>
+                  <Icon type="appstore" />
+                  <span>{item.title}</span>
+                </Link>
               </span>
             }
           >
@@ -58,8 +61,10 @@ class NavLeft extends React.Component {
       }
       return (
         <Menu.Item key={item.key}>
-          <Icon type="pie-chart" />
-          <span>{item.title}</span>
+          <Link to={item.key}>
+            <Icon type="pie-chart" />
+            <span>{item.title}</span>
+          </Link>
         </Menu.Item>
       );
     });
@@ -69,7 +74,13 @@ class NavLeft extends React.Component {
     return (
       <div>
         <div className="logo">
-          <img className='App-logo' src="/assets/logo.svg" width="40" height="40" alt="" />
+          <img
+            className="App-logo"
+            src="/assets/logo.svg"
+            width="40"
+            height="40"
+            alt=""
+          />
           <h1>CMS</h1>
         </div>
         <Menu
