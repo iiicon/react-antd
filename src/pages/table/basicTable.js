@@ -67,11 +67,11 @@ export default class BasicTable extends React.Component{
     }).then((res)=>{
 
       if(res.code == '0'){
-        res.list.map((item, index) => {
+        res.result.list.map((item, index) => {
           item.key = index;
         })
         this.setState({
-          dataSource2:res.list,
+          dataSource2:res.result.list,
           selectedRowKeys:[],
           selectedRows:null,
           pagination: Utils.pagination(res,(current)=>{
@@ -227,7 +227,7 @@ export default class BasicTable extends React.Component{
             }}
             columns={columns}
             dataSource={this.state.dataSource2}
-            pagination={false}
+            pagination={this.state.pagination}
           />
         </Card>
         <Card title="Mock-单选" style={{ margin: '10px 0' }}>

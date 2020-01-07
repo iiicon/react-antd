@@ -13,6 +13,7 @@ import Login from "./pages/form/login";
 import Register from "./pages/form/register";
 import BasicTable from "./pages/table/basicTable";
 import HighTable from "./pages/table/highTable";
+import Order from "./pages/order";
 
 export default class Routers extends React.Component {
   render() {
@@ -37,6 +38,7 @@ export default class Routers extends React.Component {
                     <Route path="/form/reg" component={Register} />
                     <Route path="/table/basic" component={BasicTable} />
                     <Route path="/table/high" component={HighTable} />
+                    <Route path="/order" component={Order} />
                   </Switch>
                 </Admin>
               );
